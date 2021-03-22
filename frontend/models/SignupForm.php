@@ -38,6 +38,18 @@ class SignupForm extends Model
     }
 
     /**
+     * {@inheritdoc}
+     */
+    public function attributeLabels()
+    {
+        return [
+            'username' => Yii::t('site','Username'),
+            'email' => Yii::t('site','Email'),
+            'password' => Yii::t('site','Password'),
+        ];
+    }
+
+    /**
      * Signs user up.
      *
      * @return bool whether the creating new account was successful and email was sent

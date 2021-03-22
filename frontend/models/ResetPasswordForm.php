@@ -50,6 +50,16 @@ class ResetPasswordForm extends Model
     }
 
     /**
+     * {@inheritdoc}
+     */
+    public function attributeLabels()
+    {
+        return [
+            'password' => Yii::t('site','Password'),
+        ];
+    }
+
+    /**
      * Resets password.
      *
      * @return bool if password was reset.
