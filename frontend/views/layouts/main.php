@@ -4,8 +4,8 @@
 /* @var $content string */
 
 use common\widgets\Alert;
-use common\widgets\LanguageDropdown;
 
+use Yii;
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
@@ -49,7 +49,7 @@ AppAsset::register($this);
         $menuItems[] = '<li>'
             . Html::beginForm(['/site/logout'], 'post')
             . Html::submitButton(
-                Yii::t('site','Login').' (' . Yii::$app->user->identity->username . ')',
+                Yii::t('site','Logout').' (' . Yii::$app->user->identity->username . ')',
                 ['class' => 'btn btn-link logout']
             )
             . Html::endForm()
