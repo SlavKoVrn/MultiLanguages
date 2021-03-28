@@ -1,10 +1,32 @@
 <?php
+use common\models\Item;
+
+use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
 
 $this->title = Yii::$app->name;
 ?>
 <div class="site-index">
+
+    <?php
+    $item = Item::findOne(1);
+    echo DetailView::widget([
+        'model' => $item,
+        'attributes' => [
+            'id',
+            'name',
+            [
+                'attribute'=>'title',
+                'label'=>Yii::t('item','Title'),
+            ],
+            [
+                'attribute'=>'description',
+                'label'=>Yii::t('item','Description'),
+            ],
+        ],
+    ]);
+    ?>
 
     <div class="jumbotron">
         <h1><?= Yii::t('site','Congratulations!') ?></h1>
